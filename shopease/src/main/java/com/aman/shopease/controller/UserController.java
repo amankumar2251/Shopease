@@ -4,6 +4,7 @@ import com.aman.shopease.entity.User;
 import com.aman.shopease.service.UserService;
 import org.springframework.web.bind.annotation.*;
 import com.aman.shopease.dto.LoginRequest;
+import jakarta.validation.Valid;
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
@@ -15,7 +16,7 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public User registerUser(@RequestBody User user) {
+    public User registerUser(@Valid @RequestBody User user) {
         return userService.registerUser(user);
     }
 
