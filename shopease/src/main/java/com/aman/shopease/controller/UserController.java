@@ -3,7 +3,7 @@ package com.aman.shopease.controller;
 import com.aman.shopease.entity.User;
 import com.aman.shopease.service.UserService;
 import org.springframework.web.bind.annotation.*;
-
+import com.aman.shopease.dto.LoginRequest;
 @RestController
 @RequestMapping("/api/users")
 public class UserController {
@@ -17,5 +17,10 @@ public class UserController {
     @PostMapping("/register")
     public User registerUser(@RequestBody User user) {
         return userService.registerUser(user);
+    }
+
+    @PostMapping("/login")
+    public User loginUser(@RequestBody LoginRequest loginRequest) {
+        return userService.loginUser(loginRequest);
     }
 }
