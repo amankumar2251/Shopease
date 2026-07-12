@@ -1,5 +1,6 @@
 package com.aman.shopease.controller;
 
+import com.aman.shopease.dto.UserResponse;
 import com.aman.shopease.entity.User;
 import com.aman.shopease.service.UserService;
 import org.springframework.web.bind.annotation.*;
@@ -17,7 +18,7 @@ public class UserController {
     }
 
     @PostMapping("/register")
-    public User registerUser(@Valid @RequestBody User user) {
+    public UserResponse registerUser(@Valid @RequestBody User user) {
         return userService.registerUser(user);
     }
 

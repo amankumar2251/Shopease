@@ -1,6 +1,7 @@
 package com.aman.shopease.service.impl;
 
 import com.aman.shopease.dto.LoginRequest;
+import com.aman.shopease.dto.UserResponse;
 import com.aman.shopease.entity.User;
 import com.aman.shopease.repository.UserRepository;
 import com.aman.shopease.service.UserService;
@@ -25,11 +26,18 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public User registerUser(User user) {
+    public UserResponse registerUser(User user) {
 
         user.setPassword(passwordEncoder.encode(user.getPassword()));
 
-        return userRepository.save(user);
+        User savedUser = userRepository.save(user);
+
+        return new UserResponse(
+                savedUser.getId(),
+                savedUser.getName(),
+                savedUser.getEmail(),
+                savedUser.getPhoneNumber()
+        );
     }
 
     @Override
