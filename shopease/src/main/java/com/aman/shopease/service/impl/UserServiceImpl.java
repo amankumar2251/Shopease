@@ -5,6 +5,7 @@ import com.aman.shopease.entity.User;
 import com.aman.shopease.repository.UserRepository;
 import com.aman.shopease.service.UserService;
 import org.springframework.stereotype.Service;
+import org.springframework.security.crypto.password.PasswordEncoder;
 
 import java.util.Optional;
 
@@ -12,13 +13,20 @@ import java.util.Optional;
 public class UserServiceImpl implements UserService {
 
     private final UserRepository userRepository;
+    private final PasswordEncoder passwordEncoder;
 
-    public UserServiceImpl(UserRepository userRepository) {
+    public UserServiceImpl(UserRepository userRepository,
+                           PasswordEncoder passwordEncoder) {
+
         this.userRepository = userRepository;
+        this.passwordEncoder = passwordEncoder;
     }
 
     @Override
     public User registerUser(User user) {
+
+        user.setPassword(passwordEncoder.encode(user.getPassword()));
+
         return userRepository.save(user);
     }
 
@@ -29,7 +37,10 @@ public class UserServiceImpl implements UserService {
 
         if (user.isPresent()) {
 
-            if (user.get().getPassword().equals(loginRequest.getPassword())) {
+            if (passwordEncoder.matches(
+                    loginRequest.getPassword(),
+                    user.get().getPassword())) {
+
                 return user.get();
             }
 
