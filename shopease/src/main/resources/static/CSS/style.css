@@ -175,8 +175,8 @@ body{
 }
 
 .hero-image{
-    width:75%;
-    max-width:450px;
+    width:90%;
+    max-width:700px;
     animation:float 3s ease-in-out infinite;
 }
 
