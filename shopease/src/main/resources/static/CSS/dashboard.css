@@ -198,3 +198,14 @@ footer{
     }
 
 }
+#currentDate{
+    margin-top:10px;
+    color:#bbbbbb;
+    font-size:16px;
+}
+
+#currentTime{
+    color:#ff2e2e;
+    font-size:18px;
+    font-weight:bold;
+}

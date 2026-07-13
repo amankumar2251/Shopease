@@ -3,57 +3,80 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ShopEase</title>
+    <title>ShopEase Admin Panel</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
 <nav class="navbar">
-    <div class="logo">🛒 ShopEase</div>
+
+    <div class="logo">
+
+        <h2>
+            <span class="white">Shop</span><span class="red">Ease</span>
+            <p class="logo-text">E-Commerce Admin Panel</p>
+        </h2>
+
+
+    </div>
+
     <ul class="menu">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="products.html">Products</a></li>
-        <li><a href="login.html">Login</a></li>
-        <li><a href="register.html">Register</a></li>
+        <li><a href="index.html" class="active">Home</a></li>
+        <li><a href="#">About</a></li>
+        <li><a href="#">Features</a></li>
+        <li><a href="#">Contact</a></li>
     </ul>
+
+    <div class="nav-buttons">
+        <a href="login.html" class="login-btn">Login</a>
+        <a href="register.html" class="register-btn">Register</a>
+    </div>
+
 </nav>
 
-<section class="hero-section">
-    <div class="left-section">
-        <h1 class="main-heading">Welcome to ShopEase</h1>
+<section class="hero">
+
+    <div class="hero-left">
+
+        <p class="welcome">WELCOME TO</p>
+
+        <h1>
+            <span class="white">Shop</span><span class="red">Ease</span><br>
+            Admin Panel
+        </h1>
+
         <p class="description">
-            E-Commerce Website
+            Manage your e-commerce products.
         </p>
-        <div class="button-section">
-            <a href="login.html" class="login-button">Login</a>
-            <a href="products.html" class="product-button">View Products</a>
+
+        <div class="hero-buttons">
+
+            <a href="login.html" class="dashboard-btn">
+                Login to Dashboard
+            </a>
+
+            <a href="register.html" class="account-btn">
+                Create Account
+            </a>
+
         </div>
+
     </div>
 
-    <div class="right-section">
-        <img src="https://cdn-icons-png.flaticon.com/512/3081/3081559.png" alt="Shopping Image" class="hero-image">
+    <div class="hero-right">
+
+        <img src="images/main.png.png" class="hero-image">
+
     </div>
+
 </section>
 
-<section class="feature-section">
-    <div class="feature-card">
-        <h2>🔐 Secure Login</h2>
-        <p>Login secured using JWT Authentication.</p>
-    </div>
+<footer>
 
-    <div class="feature-card">
-        <h2>⚡ Fast APIs</h2>
-        <p>Spring Boot REST APIs with MySQL.</p>
-    </div>
+    <p>
+        © 2026 <span class="red">ShopEase</span> | Developed by Aman Kumar
+    </p>
 
-    <div class="feature-card">
-        <h2>🛍 Product Management</h2>
-        <p>Add, Update, Delete and View Products.</p>
-    </div>
-</section>
-
-<footer class="footer">
-    © 2026 ShopEase | Developed by Aman Kumar
 </footer>
 
 </body>

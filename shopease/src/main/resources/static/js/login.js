@@ -40,6 +40,7 @@ async function login(){
         if(response.ok){
 
             localStorage.setItem("token",data.token);
+            localStorage.setItem("email",email);
 
             message.innerHTML=data.message;
             message.style.color="green";

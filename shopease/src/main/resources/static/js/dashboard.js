@@ -1,4 +1,6 @@
 const token=localStorage.getItem("token");
+const email=localStorage.getItem("email");
+document.getElementById("userEmail").innerHTML=email;
 
 if(token===null){
     window.location.href="login.html";
@@ -32,4 +34,17 @@ async function loadProducts(){
 function logout(){
     localStorage.removeItem("token");
     window.location.href="login.html";
+}
+showDateTime();
+
+setInterval(showDateTime,1000);
+
+function showDateTime(){
+
+    const now=new Date();
+
+    document.getElementById("currentDate").innerHTML=now.toDateString();
+
+    document.getElementById("currentTime").innerHTML=now.toLocaleTimeString();
+
 }
